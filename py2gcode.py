@@ -263,7 +263,7 @@ class py2gcode:
         volume = self.position['L'][-1]*0.1*np.pi*(.1*self.serynge_diameter/2)**2
         return length,volume
 def main():
-   hy = hyrel()
+   hy = py2gcode()
    hy.nozzle_diameter = 0.35
    hy.set_head(0)
    hy.e_config()
