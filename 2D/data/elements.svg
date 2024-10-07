@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="86.371597mm"
+   height="36.109142mm"
+   viewBox="0 0 86.371597 36.109142"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="elements.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.72426346"
+     inkscape:cx="296.8533"
+     inkscape:cy="191.22876"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264999"
+     d="M 0.1324995,0.719884 V 36.109143"
+     id="path1" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264999"
+     d="M 5.3081945,0.579307 V 35.968566"
+     id="path1-2" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264999"
+     d="M 10.687607,0 V 35.389259"
+     id="path1-5" />
+  <ellipse
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264999"
+     id="path2"
+     cx="25.059969"
+     cy="7.0486197"
+     rx="5.5537887"
+     ry="5.0371571" />
+  <ellipse
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264999"
+     id="path3"
+     cx="24.801657"
+     cy="25.389042"
+     rx="5.8121047"
+     ry="6.5870519" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264999"
+     d="m 39.395572,3.164705 c 0,0 11.045164,6.147849 13.174104,10.590945 2.12894,4.443096 2.076103,8.802657 0,12.657473 -2.076103,3.854816 -12.918477,7.491156 -12.918477,7.491156"
+     id="path5"
+     sodipodi:nodetypes="czzc" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264999"
+     d="m 45.005499,3.048348 c 0,0 11.045168,6.147849 13.174108,10.590945 2.12894,4.443096 2.0761,8.802657 0,12.657473 -2.07611,3.854816 -12.918481,7.491156 -12.918481,7.491156"
+     id="path5-5"
+     sodipodi:nodetypes="czzc"
+     inkscape:label="path5-5" />
+  <path
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264999"
+     d="m 49.739127,3.192502 c 0,0 11.045163,6.147849 13.174103,10.590945 2.12894,4.443096 2.0761,8.802657 0,12.657473 -2.0761,3.854816 -12.918483,7.491156 -12.918483,7.491156"
+     id="path5-7"
+     sodipodi:nodetypes="czzc" />
+  <path
+     sodipodi:type="spiral"
+     style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.264583"
+     id="path7"
+     sodipodi:cx="123.73325"
+     sodipodi:cy="22.990101"
+     sodipodi:expansion="1"
+     sodipodi:revolution="3"
+     sodipodi:radius="10.174002"
+     sodipodi:argument="-16.701321"
+     sodipodi:t0="0"
+     d="m 123.73325,22.990101 c -0.27845,0.427401 -0.71351,-0.164491 -0.71037,-0.462815 0.009,-0.808441 0.97149,-1.14131 1.636,-0.957922 1.18867,0.328038 1.61788,1.740637 1.20548,2.809183 -0.60522,1.568133 -2.51921,2.105748 -3.98237,1.453028 -1.95016,-0.869971 -2.59826,-3.300982 -1.70058,-5.15555 1.12964,-2.333785 4.08426,-3.093147 6.32874,-1.948136 2.71836,1.386762 3.58939,4.868365 2.19568,7.501919 -1.64243,3.103552 -5.65299,4.086501 -8.6751,2.443242 -3.48914,-1.897207 -4.58418,-6.437971 -2.69079,-9.848287 2.15138,-3.875017 7.22319,-5.082253 11.02147,-2.938349 4.26109,2.405137 5.58062,8.008592 3.1859,12.194655 -2.65859,4.647323 -8.79413,6.079204 -13.36784,3.433456"
+     transform="translate(-46.493498,-7.2879052)"
+     inkscape:label="path7" />
+</svg>
