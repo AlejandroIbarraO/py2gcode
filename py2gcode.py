@@ -231,8 +231,11 @@ class py2gcode:
         if code in ['x','y','z']:
             return self.position[code][-1]
         
-    def out(self):
-        f = open(self.output+'.GCODE','w')
+    def out(self,name = None):
+        if name is None:
+            f = open(self.output+'.GCODE','w')
+        else:
+            f = open(name+'.GCODE','w')
         for command in self.command_history:
             f.write(command+'\n')
         if self.esteps == 1:

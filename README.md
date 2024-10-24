@@ -15,8 +15,28 @@ To start we have to initiate the library calling py2gcode. The two important par
 
 ```python 
 from py2gcode import py2gcode
-pg = py2gcode(material_diameter = 8.6,nozzle_diameter = 0.91)
-pg =  
+# lets cretate a triangular path
+# set the initial diameter of the material and the output diameter.
+pg = py2gcode(material_diameter = 8.6,nozzle_diameter = 0.91) 
+pg.go_home()
+
+pg.move_abs(z = 10.0) # rise the nozzle 10.0 [mm]
+
+pg.move_abs(x = 10.0,y = 10.0)
+
+pg.move_abs(z = 0.2) # move sligly adove the surface
+# triangular profile using relative movements
+pg.move(x = 5.0,y = 10.0, extrude = True)
+pg.move(x = 5.0,y = -10.0, extrude = True)
+pg.move(x = -10, extrude = True)
+
+pg.move_abs(z = 10.0) # safe position
+pg.move_abs(x = 0)
+pg.move_abs(y = 0)
+
+pg.plot() # 3d representation using matplotlib
+pg.out('mygcode') # generate the gcode file
+
 ```
 
 
