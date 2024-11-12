@@ -8,11 +8,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class py2gcode:
-    def __init__(self, serynge_diameter =12.5,nozzle_diameter = 0.91,esteps = 0):
-        self.serynge_diameter = serynge_diameter
+    def __init__(self, material_diameter =12.5,nozzle_diameter = 0.91,esteps = 0):
+        self.material_diameter = material_diameter
         self.nozzle_diameter = nozzle_diameter
         self.line_diameter = self.nozzle_diameter
-        self.extrude_factor = (self.line_diameter/self.serynge_diameter)**2
+        self.extrude_factor = (self.line_diameter/self.material_diameter)**2
         self.command_history = []
         self.position = {'x' : [0],'y' : [0], 'z': [0], 'E':['tab:blue'], 'L':[0]}
         self.extruded_lenght = 0
@@ -28,8 +28,8 @@ class py2gcode:
         self.feed = 600. # mm/min 600 it's 10 mm/s
         self.feednoprint = 1200.
         # retraction parameters
-        self.retraction_speed = 5000 # steps per seconds 
-        self.retraction_lenght = 5000 # steps, current configuration about of 4ul
+        self.retraction_speed = 5000.0 # steps per seconds 
+        self.retraction_lenght = 5000.0 # steps, current configuration about of 4ul
         self.delay_retraction = 100 # ms
         self.clean_position = (10,10)
         self.clean_count = 0
@@ -47,7 +47,7 @@ class py2gcode:
     def set_temp(self,head = None,tem = 200):
         if head == None:
             head = self.current_toolhead
-        self.command_history.append('M106 T'+str(head) +' S'+str(tem))
+        self.command_history.append('M109 T'+str(head) +' S'+str(tem))
     def set_offset(self, toolhead,offset):
         if toolhead != 0:
             self.command_history.append('M6 '+ 'T'+str(toolhead) + ' X'+str(offset[0])+ ' Y'+str(offset[0])+ ' Z'+str(offset[2]))
@@ -111,14 +111,14 @@ class py2gcode:
             self.command_history.append('M756 S'+str(self.line_diameter))
         else:
             ## local extuding steps calculation
-            self.extrude_factor = (self.line_diameter/self.serynge_diameter)**2
+            self.extrude_factor = (self.line_diameter/self.material_diameter)**2
             self.command_history.append('M229 E1 D1 S1')
         if self.relative == True:
             self.command_history.append('G91')
         else:
            self.command_history.append('G90') 
     def move(self,x = None,y = None,z = None, extrude = False,feed = None,extrude_multiplier = 1.0):
-        self.extrude_factor = (self.line_diameter/self.serynge_diameter)**2
+        self.extrude_factor = (self.line_diameter/self.material_diameter)**2
         """ this command append a relative move, the flag extrude it is used to 
             set a extrusion move"""
         if self.relative == False:
@@ -175,7 +175,7 @@ class py2gcode:
             self.position['E'].append('tab:blue')
         self.command_history.append(cmd)
     def move_abs(self,x = None,y = None,z = None,extrude = False,feed =None,extrude_multiplier = 1.0):
-        self.extrude_factor = (self.line_diameter/self.serynge_diameter)**2
+        self.extrude_factor = (self.line_diameter/self.material_diameter)**2
         if self.relative == True:
             self.command_history.append('G90') # change to absolute positioning.
             self.relative = False
@@ -263,7 +263,7 @@ class py2gcode:
             self.command_history.append(command)
     def material_report(self):
         length = self.position['L'][-1]
-        volume = self.position['L'][-1]*0.1*np.pi*(.1*self.serynge_diameter/2)**2
+        volume = self.position['L'][-1]*0.1*np.pi*(.1*self.material_diameter/2)**2
         return length,volume
 def main():
    hy = py2gcode()
