@@ -179,4 +179,4 @@ np.savez("my_pattern.npz", point=points[None], point_data=widths[None])
 
 ## License
 
-_Add a license here (for example MIT) so others know how they can use the code._
+Released under the MIT License
