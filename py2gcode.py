@@ -74,6 +74,7 @@ class py2gcode:
     def retract(self):
         if self.relative == False:
             self.command_history.append('G91') # change to relative positioning.
+            self.command_history.append('M83') #  klipper uses relative positioning for extrusion
             self.relative = True
         self.command_history.append('G1 E{e:.6} F{f:.6}'.format(e = -float(round(self.retraction_lenght,3)),f =self.retraction_speed))
         self.position['x'].append(self.position['x'][-1])
@@ -84,6 +85,8 @@ class py2gcode:
     def recover(self):
         if self.relative == False:
             self.command_history.append('G91') # change to relative positioning.
+            self.command_history.append('M83') #  klipper uses relative positioning for extrusion
+
             self.relative = True
         self.command_history.append('G1 E{e:.6} F{f:.6}'.format(e = float(round(self.retraction_lenght,3)),f =self.retraction_speed))  
         self.position['x'].append(self.position['x'][-1])
@@ -115,6 +118,7 @@ class py2gcode:
             self.command_history.append('M229 E1 D1 S1')
         if self.relative == True:
             self.command_history.append('G91')
+
         else:
            self.command_history.append('G90') 
     def move(self,x = None,y = None,z = None, extrude = False,feed = None,extrude_multiplier = 1.0):
@@ -123,6 +127,7 @@ class py2gcode:
             set a extrusion move"""
         if self.relative == False:
             self.command_history.append('G91') # change to relative positioning.
+            self.command_history.append('M83') #  klipper uses relative positioning for extrusion
             self.relative = True
         if extrude:    
             cmd = 'G1 '
@@ -177,7 +182,8 @@ class py2gcode:
     def move_abs(self,x = None,y = None,z = None,extrude = False,feed =None,extrude_multiplier = 1.0):
         self.extrude_factor = (self.line_diameter/self.material_diameter)**2
         if self.relative == True:
-            self.command_history.append('G90') # change to absolute positioning.
+            self.command_history.append('G90')
+            self.command_history.append('M82')#  klipper uses relative positioning for extrusion
             self.relative = False
         if extrude:    
             cmd = 'G1 '
@@ -233,7 +239,7 @@ class py2gcode:
         
     def out(self,name = None):
         if name is None:
-            f = open(self.output+'.GCODE','w')
+            f = open(self.output+'.gcode','w')
         else:
             f = open(name+'.GCODE','w')
         for command in self.command_history:
